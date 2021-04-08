@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fundo_degrade"
+    tools:context="com.example.beast.chatbot.MainActivity">
+
+    <!-- layout de logo-->
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#D81B60"
+        android:elevation="24dp">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:padding="18dp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center"
+            android:background="@drawable/logofoto"
+            android:elevation="50dp"
+            android:padding="16dp"
+            android:paddingTop="16dp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="60dp"
+            android:layout_height="80dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center"
+            android:layout_toEndOf="@+id/imageView"
+            android:background="@drawable/lisa2"
+            android:elevation="50dp"
+            android:padding="16dp"
+            android:paddingTop="16dp" />
+
+    </RelativeLayout>
+
+    <!-- layout de fluxo de msg-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="900dp"
+        android:layout_above="@+id/relativeLayout"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="80dp"
+        android:clipToPadding="false"
+        android:padding="16dp"
+        android:paddingBottom="50dp" />
+    <!--android:background="#f4f6f7" antigo fundo
+     agora estamos usando direto no RelativeLayout
+        />
+        -->
+
+    <!-- layout de escrita-->
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_toStartOf="@+id/addBtn"
+            android:background="@drawable/arredondamento_caixade_texto"
+            android:elevation="2dp">
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:background="#ffff"
+                android:hint="Digite aqui..."
+                android:minHeight="50dp"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <!-- botao de enviar e falar-->
+
+        <RelativeLayout
+            android:id="@+id/addBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/cor_botao_enviar"
+            android:elevation="4dp">
+
+            <ImageView
+                android:id="@+id/fab_img"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/imagem_microfone"
+                android:tint="#fff" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "357319732856",
+    "firebase_url": "https://chatbot-8ae9e.firebaseio.com",
+    "project_id": "chatbot-8ae9e",
+    "storage_bucket": "chatbot-8ae9e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:357319732856:android:cbb99b769cef1b1c",
+        "android_client_info": {
+          "package_name": "com.example.beast.chatbot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "357319732856-cu3im9sglvb906ogl200516l5ogk74tu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.beast.chatbot",
+            "certificate_hash": "19c5857efa4984e621a645f6b9f6e1229eab38ca"
+          }
+        },
+        {
+          "client_id": "357319732856-qg3odtat28htvcaajbeqkjmohit7q4pa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGIcjlQwhwUi8UiQMVTgspqr0YKVRrfAc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "357319732856-qg3odtat28htvcaajbeqkjmohit7q4pa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
