@@ -91,9 +91,8 @@ public class MainActivity extends AppCompatActivity implements AIListener {
         final AIRequest aiRequest = new AIRequest();
 
 
-
         //tratando a versao do android para recurso de identificacao do android 8-API level 26
-        if(Build.VERSION.SDK_INT >= 26) { //recurso android 8 identificacao ID
+        if (Build.VERSION.SDK_INT >= 26) { //recurso android 8 identificacao ID
             //novo metodo de identificacao Android 8
             addressID = Secure.getString(getContentResolver(), Secure.ANDROID_ID);
             ativaID = 0;
@@ -102,7 +101,7 @@ public class MainActivity extends AppCompatActivity implements AIListener {
             WifiManager manager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
             assert manager != null;
             WifiInfo info = manager.getConnectionInfo();
-            address  = info.getMacAddress();
+            address = info.getMacAddress();
             ativaID = 1;
         }
 
@@ -122,11 +121,10 @@ public class MainActivity extends AppCompatActivity implements AIListener {
 
                 if (!message.equals("")) {
                     ChatMessage chatMessage = new ChatMessage(message, "user");
-                    if(ativaID == 0) {
+                    if (ativaID == 0) {
                         ref.child("chat" + "/" + addressID).push().setValue(chatMessage); //chat padrao
                         //ref.child("chatArt" + "/" + address).push().setValue(chatMessage); //usado para fazer estudo de caso do artigo
-                    }
-                    else{
+                    } else {
                         ref.child("chat" + "/" + address).push().setValue(chatMessage); //chat padrao
                     }
                     //executando a api
@@ -153,16 +151,15 @@ public class MainActivity extends AppCompatActivity implements AIListener {
 
                                 //fazendo o sintetizador de voz
                                 if (Build.VERSION.SDK_INT >= 21 && tts != null) {
-                                    if(respAud) {
+                                    if (respAud) {
                                         tts.speak(reply, TextToSpeech.QUEUE_FLUSH, null, null);
                                     }
                                 }
 
                                 ChatMessage chatMessage = new ChatMessage(reply, "bot");
-                                if(ativaID == 0){
+                                if (ativaID == 0) {
                                     ref.child("chat" + "/" + addressID).push().setValue(chatMessage);
-                                }
-                                else {
+                                } else {
                                     ref.child("chat" + "/" + address).push().setValue(chatMessage);
                                     //ref.child("chatArt" + "/" + address).push().setValue(chatMessage); //teste pro artigo
                                 }
@@ -174,7 +171,7 @@ public class MainActivity extends AppCompatActivity implements AIListener {
 
                 } else {
                     aiService.startListening(); //se o usuario nao digita nada a api pega automatico a voz e faz a devida
-                                                // analise de cordo com o que foi treinado para responder
+                    // analise de cordo com o que foi treinado para responder
                     respAud = true; //indica que deve ser respondido com audio
                 }
 
@@ -228,7 +225,7 @@ public class MainActivity extends AppCompatActivity implements AIListener {
 
         //recuperando as informaçoes do firebase para carregar na recycleView (ListView)
         //carrega as mensagens do firebase no adpter para chamar na tela
-        if(ativaID == 0) {
+        if (ativaID == 0) {
             adapter = new FirebaseRecyclerAdapter<ChatMessage, chat_rec>(
                     ChatMessage.class, R.layout.msglist, chat_rec.class, ref.child("chat" + "/" + addressID)) {
                 //adapter = new FirebaseRecyclerAdapter<ChatMessage, chat_rec>(ChatMessage.class, R.layout.msglist, chat_rec.class, ref.child("chatArt" + "/" + address)) {
@@ -251,8 +248,7 @@ public class MainActivity extends AppCompatActivity implements AIListener {
                     }
                 }
             };
-        }
-        else{
+        } else {
             adapter = new FirebaseRecyclerAdapter<ChatMessage, chat_rec>(
                     ChatMessage.class, R.layout.msglist, chat_rec.class, ref.child("chat" + "/" + address)) {
                 //adapter = new FirebaseRecyclerAdapter<ChatMessage, chat_rec>(ChatMessage.class, R.layout.msglist, chat_rec.class, ref.child("chatArt" + "/" + address)) {
