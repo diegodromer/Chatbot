@@ -2,10 +2,10 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 30
-    buildToolsVersion '27.0.3'
+    buildToolsVersion '30.0.3'
     defaultConfig {
         applicationId "com.example.beast.chatbot"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -31,7 +31,6 @@ dependencies {
 
     implementation 'ai.api:sdk:2.0.7@aar'
 
-    //compile 'ai.api:libai:1.4.8' //DEMONIO DO PROJETO EXORCIZADO
     implementation 'ai.api:libai:1.3.5'
 
     implementation 'com.google.code.gson:gson:2.8.2'
