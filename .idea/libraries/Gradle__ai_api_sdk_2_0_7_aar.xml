@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: ai.api:sdk:2.0.7@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6bb97100b43ef7aa851da85606f0e1a6/sdk-2.0.7/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6bb97100b43ef7aa851da85606f0e1a6/sdk-2.0.7/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6bb97100b43ef7aa851da85606f0e1a6/sdk-2.0.7/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f151b3ba1fe29593068a2ff242242381/sdk-2.0.7/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f151b3ba1fe29593068a2ff242242381/sdk-2.0.7/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f151b3ba1fe29593068a2ff242242381/sdk-2.0.7/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/ai.api/sdk/2.0.7/b64dff093c426ac29f794e3d156e1527ef926d24/sdk-2.0.7-javadoc.jar!/" />

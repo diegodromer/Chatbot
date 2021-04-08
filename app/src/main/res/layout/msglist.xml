@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -16,7 +17,7 @@
         android:textColor="#000000"
         android:background="@drawable/tela_envio_bot"
         android:elevation="2dp"
-        />
+        tools:targetApi="lollipop" />
 
 
     <TextView
@@ -29,7 +30,8 @@
         android:background="@drawable/tela_envio_usuario"
         android:textColor="#ffff"
         android:padding="8dp"
-        android:elevation="2dp"/>
+        android:elevation="2dp"
+        tools:targetApi="lollipop" />
 
 
 </RelativeLayout>

@@ -23,15 +23,8 @@ public class ChatMessage {
         return msgText;
     }
 
-    public void setMsgText(String msgText) {
-        this.msgText = msgText;
-    }
-
     public String getMsgUser() {
         return msgUser;
     }
 
-    public void setMsgUser(String msgUser) {
-        this.msgUser = msgUser;
-    }
 }

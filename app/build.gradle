@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 30
     buildToolsVersion '27.0.3'
     defaultConfig {
         applicationId "com.example.beast.chatbot"
         minSdkVersion 19
-        targetSdkVersion 26
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -22,7 +22,9 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    //noinspection GradleCompatible
     implementation 'com.android.support:appcompat-v7:26.0.2'
+    //noinspection GradleCompatible
     implementation 'com.android.support:recyclerview-v7:26.0.2'
     implementation 'com.google.firebase:firebase-database:11.2.2'
     implementation 'com.firebaseui:firebase-ui-database:2.3.0'

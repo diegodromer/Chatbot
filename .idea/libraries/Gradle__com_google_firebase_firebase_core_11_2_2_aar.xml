@@ -2,9 +2,10 @@
   <library name="Gradle: com.google.firebase:firebase-core:11.2.2@aar">
     <CLASSES>
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/186bf700fff1dccca0c3c080d66f1672/firebase-core-11.2.2/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a3752b7eecb266c195783593d06e7ea7/firebase-core-11.2.2/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a3752b7eecb266c195783593d06e7ea7/firebase-core-11.2.2/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a3752b7eecb266c195783593d06e7ea7/firebase-core-11.2.2/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3c2749b3cbf3c2fbc661e186d6d5c3fb/firebase-core-11.2.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3c2749b3cbf3c2fbc661e186d6d5c3fb/firebase-core-11.2.2/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3c2749b3cbf3c2fbc661e186d6d5c3fb/firebase-core-11.2.2/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

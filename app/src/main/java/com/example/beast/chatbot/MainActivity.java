@@ -65,9 +65,9 @@ public class MainActivity extends AppCompatActivity implements AIListener {
 
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO}, 1);
 
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        editText = (EditText) findViewById(R.id.editText);
-        addBtn = (RelativeLayout) findViewById(R.id.addBtn);
+        recyclerView = findViewById(R.id.recyclerView);
+        editText = findViewById(R.id.editText);
+        addBtn = findViewById(R.id.addBtn);
 
         recyclerView.setHasFixedSize(true);
         final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
@@ -100,6 +100,7 @@ public class MainActivity extends AppCompatActivity implements AIListener {
         } else { //recurso android versoes anteriores
             ///metodo anterior, nao muito eficiente
             WifiManager manager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+            assert manager != null;
             WifiInfo info = manager.getConnectionInfo();
             address  = info.getMacAddress();
             ativaID = 1;
@@ -137,9 +138,8 @@ public class MainActivity extends AppCompatActivity implements AIListener {
                         protected AIResponse doInBackground(AIRequest... aiRequests) {
                             final AIRequest request = aiRequests[0];
                             try {
-                                final AIResponse response = aiDataService.request(aiRequest);
-                                return response;
-                            } catch (AIServiceException e) {
+                                return aiDataService.request(aiRequest);
+                            } catch (AIServiceException ignored) {
                             }
                             return null;
                         }
@@ -152,10 +152,9 @@ public class MainActivity extends AppCompatActivity implements AIListener {
                                 String reply = result.getFulfillment().getSpeech(); //guarda a string do bot
 
                                 //fazendo o sintetizador de voz
-                                String resposta = reply;
                                 if (Build.VERSION.SDK_INT >= 21 && tts != null) {
-                                    if(respAud == true) {
-                                        tts.speak(resposta, TextToSpeech.QUEUE_FLUSH, null, null);
+                                    if(respAud) {
+                                        tts.speak(reply, TextToSpeech.QUEUE_FLUSH, null, null);
                                     }
                                 }
 
@@ -204,7 +203,7 @@ public class MainActivity extends AppCompatActivity implements AIListener {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                ImageView fab_img = (ImageView) findViewById(R.id.fab_img);
+                ImageView fab_img = findViewById(R.id.fab_img);
                 Bitmap img = BitmapFactory.decodeResource(getResources(), R.drawable.imagem_enviar);
                 Bitmap img1 = BitmapFactory.decodeResource(getResources(), R.drawable.imagem_microfone);
 
@@ -343,6 +342,7 @@ public class MainActivity extends AppCompatActivity implements AIListener {
 
         //faz o filtro para cada mac anddress dos celulares (precisa fazer para dados moveis tb)
         WifiManager manager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+        assert manager != null;
         WifiInfo info = manager.getConnectionInfo();
         final String address = info.getMacAddress();
 
@@ -361,9 +361,8 @@ public class MainActivity extends AppCompatActivity implements AIListener {
         //ref.child("chatArt" + "/" + address).push().setValue(chatMessage);
 
         //sintetizador de voz
-        String resposta = reply;
         if (Build.VERSION.SDK_INT >= 21 && tts != null) {
-            tts.speak(resposta, TextToSpeech.QUEUE_FLUSH, null, null);
+            tts.speak(reply, TextToSpeech.QUEUE_FLUSH, null, null);
         }
     }
 

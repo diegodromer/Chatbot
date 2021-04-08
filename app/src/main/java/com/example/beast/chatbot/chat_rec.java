@@ -10,13 +10,14 @@ import android.widget.TextView;
 
 public class chat_rec extends RecyclerView.ViewHolder {
 
-    TextView leftText, rightText;
+    final TextView leftText;
+    final TextView rightText;
 
     public chat_rec(View itemView) {
         super(itemView);
 
-        leftText = (TextView) itemView.findViewById(R.id.leftText);
-        rightText = (TextView) itemView.findViewById(R.id.rightText);
+        leftText = itemView.findViewById(R.id.leftText);
+        rightText = itemView.findViewById(R.id.rightText);
 
 
     }
